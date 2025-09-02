@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "name": "Ozon",
+    "iconUrl": "https://static.rustore.ru/imgproxy/NHyYGjd-Y6ItKNtd89W-VJggLEXavGn671v8xqSUmW8/preset:web_app_icon_62/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvNTE0MjM5L2NvbnRlbnQvSUNPTi80MzM4ZWQwMy0zNjg5LTRjYmItYjM1Ny01ODAwMjJlMDZiNDkucG5n.webp",
+    "searchUrl": "https://www.ozon.ru/search/?text=${text}",
+    "separator": "+",
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "Avito",
+    "iconUrl": "https://static.rustore.ru/imgproxy/5Bzas2rtiJpryJAPnZw_jj9ZnSDCpBHTk0mL5hIexrU/preset:web_app_icon_62/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvMjY4ODcwMy9jb250ZW50L0lDT04vN2YyYzM3OGItM2U2Ny00Y2MyLWJjMWItMjZmNjI1YmRjZGExLnBuZw==.webp",
+    "searchUrl": "https://www.avito.ru/?q=${text}",
+    "separator": "+",
+    "active": true
+
+  },
+  {
+    "id": 3,
+    "name": "Я.Маркет",
+    "iconUrl": "https://static.rustore.ru/imgproxy/eJ36pPU8nJ1La1nYUq4QERn3vqm5SJ20Vy72cZ8fV-g/preset:web_app_icon_62/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvNjAwNTExL2NvbnRlbnQvSUNPTi8wNGQ4MmIxZi0wOTUyLTRlOGMtYWFhNy0xZWI1OGZjN2E0NjUucG5n.webp",
+    "searchUrl": "https://market.yandex.ru/search?text=${text}",
+    "separator": "%20",
+    "active": true
+  },
+  {
+    "id": 3,
+    "name": "WB",
+    "iconUrl": "https://static.rustore.ru/imgproxy/z8UWFjUtxCQUH6OzmhhnYWpkeXiXimeen3YiCEUJNhU/preset:web_app_icon_160/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvMjM0OTQzL2NvbnRlbnQvSUNPTi8wMWQxZGM1Ni04ZTc0LTQ0NmEtOTEzYS1iNTc0MTJmOWM5MTMucG5n.webp",
+    "searchUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=${text}",
+    "separator": "%20",
+    "active": true
+  }
+]
