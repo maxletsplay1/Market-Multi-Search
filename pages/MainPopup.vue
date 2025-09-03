@@ -1,9 +1,6 @@
 <template>
-  <div class="flex flex-col gap-4 min-w-64">
-    <div class="flex gap-2 items-center justify-center">
-      <img src="/icon/128.png" alt="" class="shrink-0 w-6 h-6 -mt-1">
-      <h1 class="text-2xl -ml-2">ultiSearch</h1>
-    </div>
+  <div class="p-4 flex flex-col gap-4 min-w-64">
+    <Header/>
     <div class="flex gap-2">
       <InputText
           v-model="query"
@@ -27,15 +24,7 @@
           :query="query"
       />
     </div>
-    <hr>
-    <a
-        href="https://github.com/maxletsplay1/Market-Multi-Search"
-        target="_blank"
-        class="flex items-center justify-center gap-1 -mt-1"
-    >
-      <i class="pi pi-github"/>
-      <p class="text-sm">GitHub</p>
-    </a>
+    <Footer/>
   </div>
 </template>
 
@@ -43,7 +32,9 @@
 import {InputText, Button} from "primevue";
 import {ref} from "vue";
 import markets from "@/assets/services.json"
-import MarketCard from "./MarketCard.vue";
+import MarketCard from "../components/mainPopup/MarketCard.vue";
+import Header from "../components/mainPopup/Header.vue";
+import Footer from "../components/mainPopup/Footer.vue";
 import {convertLink} from "@/composables/linkConverter";
 
 const query = ref('')

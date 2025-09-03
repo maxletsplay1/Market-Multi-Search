@@ -17,10 +17,11 @@
 <script setup lang="ts" >
 import {Button} from "primevue";
 import {convertLink} from '@/composables/linkConverter'
-import MarketButton from './MarketButton.vue';
+import MarketButton from '../components/selectionPopup/MarketButton.vue';
 import markets from "@/assets/services.json"
 
 const props = defineProps({ query: {type: String, required: true} });
+
 const open = () =>{
   markets.forEach(market => {
     window.open(convertLink(market, props.query), "_blank", "noopener,noreferrer")

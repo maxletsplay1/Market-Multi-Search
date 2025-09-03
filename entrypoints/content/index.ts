@@ -1,12 +1,12 @@
 import { createApp } from "vue";
-import Popup from "@/components/selectionPopup/Popup.vue";
+import SelectionPopup from "@/pages/SelectionPopup.vue";
 import "@/assets/tailwind.css";
 import PrimeVue from 'primevue/config';
 import Aura from '@primeuix/themes/aura';
 import Tooltip from 'primevue/tooltip';
 
 function mountVueApp(query: string, container: HTMLElement) {
-  const app = createApp(Popup, { query });
+  const app = createApp(SelectionPopup, { query });
 
   app.use(PrimeVue, {
     theme: {
