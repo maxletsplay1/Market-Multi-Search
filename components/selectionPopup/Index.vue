@@ -1,5 +1,8 @@
 <template>
-  <div class="flex items-center gap-1">
+  <div
+      v-if="markets.length"
+      class="flex items-center gap-1"
+  >
     <MarketButton
         v-for="market in markets"
         :query="query"
@@ -11,6 +14,12 @@
         icon="pi pi-search"
         v-tooltip="'Поиск везде'"
     />
+  </div>
+  <div
+      v-else
+      class="px-2"
+  >
+    <p>Нет активных сервисов</p>
   </div>
 </template>
 

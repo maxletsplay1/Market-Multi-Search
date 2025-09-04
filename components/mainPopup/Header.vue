@@ -10,15 +10,16 @@
     </h1>
 
   </div>
-
-    <VersionChecker/>
-
+  <VersionChecker/>
   <div
       v-if="page !== 'settings'"
       class="absolute top-2 right-2"
   >
     <a href="#settings" target="_blank">
-      <i class="pi pi-cog"/>
+      <i
+          class="pi pi-cog"
+          style="font-size: 1.2rem"
+      />
     </a>
   </div>
 </template>

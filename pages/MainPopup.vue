@@ -1,7 +1,9 @@
 <template>
   <div class="min-h-screen p-4 flex flex-col gap-4 min-w-64">
     <Header :page="page"/>
-    <Settings v-if="page === 'settings'"/>
+    <Suspense v-if="page === 'settings'">
+      <Settings/>
+    </Suspense>
     <Suspense v-else>
       <SearchPage />
     </Suspense>

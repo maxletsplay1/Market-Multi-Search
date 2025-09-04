@@ -15,7 +15,7 @@ const { loadMarkets } = useMarketsStorage()
 
 const exportMarkets = async () => {
   try {
-    const markets = await loadMarkets()
+    const markets = await loadMarkets(true)
     const blob = new Blob([JSON.stringify(markets, null, 2)], {
       type: "application/json",
     })

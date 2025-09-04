@@ -14,13 +14,13 @@ export function useMarketsStorage() {
     }
 
     const addMarket = async (market: any) => {
-        const markets = await loadMarkets()
+        const markets = await loadMarkets(true)
         markets.push(market)
         await saveMarkets(markets)
     }
 
     const updateMarket = async (id: number | string, updatedData: any) => {
-        const markets = await loadMarkets()
+        const markets = await loadMarkets(true)
         const index = markets.findIndex((m) => m.id === id)
         if (index !== -1) {
             markets[index] = { ...markets[index], ...updatedData }
@@ -29,7 +29,7 @@ export function useMarketsStorage() {
     }
 
     const removeMarket = async (id: number | string) => {
-        let markets = await loadMarkets()
+        let markets = await loadMarkets(true)
         markets = markets.filter((m) => m.id !== id)
         await saveMarkets(markets)
     }
