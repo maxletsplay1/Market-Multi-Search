@@ -10,7 +10,7 @@ export default defineConfig({
     name: "MultiSearch",
     description: 'Расширение для поиска товаров сразу на нескольких площадках',
     version: "0.0.1",
-    permissions: ["tabs"],
+    permissions: ["tabs", "background", "storage"],
     host_permissions: ["<all_urls>"],
   },
 });

@@ -25,10 +25,26 @@
     "active": true
   },
   {
-    "id": 3,
-    "name": "WB",
+    "id": 4,
+    "name": "Wildberries",
     "iconUrl": "https://static.rustore.ru/imgproxy/z8UWFjUtxCQUH6OzmhhnYWpkeXiXimeen3YiCEUJNhU/preset:web_app_icon_160/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvMjM0OTQzL2NvbnRlbnQvSUNPTi8wMWQxZGM1Ni04ZTc0LTQ0NmEtOTEzYS1iNTc0MTJmOWM5MTMucG5n.webp",
     "searchUrl": "https://www.wildberries.ru/catalog/0/search.aspx?search=${text}",
+    "separator": "%20",
+    "active": true
+  },
+  {
+    "id": 5,
+    "name": "CDEK.Shopping",
+    "iconUrl": "https://static.rustore.ru/imgproxy/FNa6ZohdkdtuIbcOSnz0_6IvfqWjKBgVL2VVXW8Jyv8/preset:web_app_icon_62/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvMjA2MzU5OTM4Ni9jb250ZW50L0lDT04vMzBmM2QwYjQtZjkyYi00MzU3LTgzMGYtNzc0NGJjMzI5NGQxLnBuZw==.webp",
+    "searchUrl": "https://cdek.shopping/?query=${text}&kea_search=true",
+    "separator": "+",
+    "active": true
+  },
+  {
+    "id": 6,
+    "name": "Au.ru",
+    "iconUrl": "https://static.rustore.ru/imgproxy/G4djB32h9rvuqzwgBOI6gNO4j2RjFIQ33mjr0A1LUNY/preset:web_app_icon_62/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvMjA0NDk2MDYzL2NvbnRlbnQvSUNPTi8xNWZkY2M2Yi1mNDk3LTQ3Y2UtODAyZi1hMmM5ZjlhY2QxNTUucG5n.webp",
+    "searchUrl": "https://au.ru/auction/?search=${text}",
     "separator": "%20",
     "active": true
   }
