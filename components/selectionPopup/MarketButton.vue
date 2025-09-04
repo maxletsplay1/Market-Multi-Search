@@ -1,10 +1,12 @@
 <template>
-  <img
-      @mousedown="open"
-      :src="market.iconUrl"
-      class="!max-w-7 !max-h-7 aspect-square shrink-0 rounded-lg !border !border-gray-300 cursor-pointer"
-      :alt="market.name + ' icon'"
-  >
+  <div class="bg-gray-300 p-[1px] rounded-[9px] !max-w-7 !max-h-7">
+    <img
+        @mousedown="open"
+        :src="market.iconUrl"
+        class=" aspect-square shrink-0 rounded-lg cursor-pointer "
+        :alt="market.name + ' icon'"
+    >
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -25,5 +27,4 @@ const url = computed(() => {
 const open = () => {
   window.open(url.value, "_blank", "noopener,noreferrer")
 }
-
 </script>

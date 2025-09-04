@@ -1,19 +1,9 @@
 import { createApp } from "vue";
 import SelectionPopup from "@/pages/SelectionPopup.vue";
-import "@/assets/tailwind.css";
-import PrimeVue from 'primevue/config';
-import Aura from '@primeuix/themes/aura';
-import Tooltip from 'primevue/tooltip';
+import tailwindStyles from "@/assets/tailwind.css?inline";
 
 function mountVueApp(query: string, container: HTMLElement) {
   const app = createApp(SelectionPopup, { query });
-
-  app.use(PrimeVue, {
-    theme: {
-      preset: Aura
-    }
-  });
-  app.directive('tooltip', Tooltip);
   app.mount(container);
 }
 
@@ -45,15 +35,24 @@ export default defineContentScript({
       popup.style.top = `${rect.bottom + window.scrollY + 5}px`;
       popup.style.left = `${rect.left + window.scrollX}px`;
       popup.style.zIndex = "999999";
-      popup.style.background = "#fff";
       popup.style.borderRadius = "10px";
+      popup.style.background = "#ffffff";
       popup.style.boxShadow = "0 2px 8px rgba(0,0,0,0.2)";
       popup.style.padding = "4px";
       popup.style.cursor = "pointer";
 
       document.body.appendChild(popup);
 
-      mountVueApp(query, popup);
+      const shadow = popup.attachShadow({ mode: "open" });
+
+      const style = document.createElement("style");
+      style.textContent = tailwindStyles;
+      shadow.appendChild(style);
+
+      const container = document.createElement("div");
+      shadow.appendChild(container);
+
+      mountVueApp(query, container);
     }
 
     function removePopup() {
