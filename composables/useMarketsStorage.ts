@@ -1,16 +1,16 @@
 import { storage } from '#imports';
 
 export function useMarketsStorage() {
-    const STORAGE_KEY = "markets"
+    const STORAGE_KEY = "MMS-markets"
 
     const loadMarkets = async (withInactive: boolean = false) => {
-        const markets = await storage.getItem<any[]>(`local:${STORAGE_KEY}`)
+        const markets = await storage.getItem<any[]>(`sync:${STORAGE_KEY}`)
         if (!markets?.length) return []
         return withInactive ? markets : markets.filter(m => m.active)
     }
 
     const saveMarkets = async (markets: any[]) => {
-        await storage.setItem(`local:${STORAGE_KEY}`, markets)
+        await storage.setItem(`sync:${STORAGE_KEY}`, markets)
     }
 
     const addMarket = async (market: any) => {
