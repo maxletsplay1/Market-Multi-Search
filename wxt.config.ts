@@ -9,7 +9,7 @@ export default defineConfig({
   manifest: {
     name: "MultiSearch",
     description: 'Расширение для поиска товаров сразу на нескольких площадках',
-    version: "0.0.1",
+    version: "0.0.2",
     permissions: ["tabs", "background", "storage"],
     host_permissions: ["<all_urls>"],
   },

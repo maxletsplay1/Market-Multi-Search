@@ -10,6 +10,9 @@
     </h1>
 
   </div>
+
+    <VersionChecker/>
+
   <div
       v-if="page !== 'settings'"
       class="absolute top-2 right-2"
@@ -21,6 +24,8 @@
 </template>
 
 <script setup lang="ts">
+import VersionChecker from './VersionChecker.vue';
+
 defineProps({
   page: {
     type: String,
