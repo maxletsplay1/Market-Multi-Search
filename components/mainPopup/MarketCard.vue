@@ -19,7 +19,7 @@
   >
     <img
         :src="market.iconUrl"
-        class="w-8 h-8 aspect-square shrink-0 rounded-lg"
+        class="w-8 h-8 aspect-square shrink-0 rounded-lg bg-[var(--p-dialog-border-color)]"
         :alt="market.name + ' icon'"
     >
     <p class="text-xl">Искать на {{market.name}}</p>
@@ -29,6 +29,7 @@
 
 <script setup lang="ts">
 import {convertLink} from '@/composables/linkConverter'
+
 const props = defineProps({
   market: {
     type: Object,
@@ -39,8 +40,8 @@ const props = defineProps({
     required: true,
   }
 })
-const url = computed(() => {
 
+const url = computed(() => {
   return convertLink(props.market, props.query)
 })
 </script>
