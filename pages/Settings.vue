@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import ImportSettings from "@/components/mainPopup/settings/ImportSettings.vue";
-import ExportSettings from "@/components/mainPopup/settings/ExportSettings.vue";
-import MarketsDataTable from "@/components/mainPopup/settings/MarketsDataTable.vue";
+import ImportSettings from "@/components/settings/ImportSettings.vue";
+import ExportSettings from "@/components/settings/ExportSettings.vue";
+import MarketsDataTable from "@/components/settings/MarketsDataTable.vue";
 </script>

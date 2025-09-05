@@ -1,5 +1,9 @@
 <template>
-<DataTable :value="markets" tableStyle="min-width: 5rem">
+<DataTable
+    :value="markets"
+    tableStyle="min-width: 5rem"
+    stripedRows
+>
   <Column field="id" header="ID"/>
   <Column field="name" header="Название"/>
   <Column field="iconUrl" header="Изображение">

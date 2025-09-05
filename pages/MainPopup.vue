@@ -15,6 +15,6 @@
 import Header from "@/components/mainPopup/Header.vue";
 import Footer from "@/components/mainPopup/Footer.vue";
 import SearchPage from "@/components/mainPopup/SearchPage.vue";
-import Settings from "@/components/mainPopup/settings/Settings.vue";
+import Settings from "@/pages/Settings.vue";
 const page = window.location.hash.substring(1);
 </script>
