@@ -33,6 +33,20 @@
           />
         </template>
       </Column>
+      <Column field="active" header="Удаление">
+        <template #body="slotProps">
+          <Button
+              label="Удалить"
+              severity="danger"
+              @click="deleteConfirmation(slotProps.data)"
+          />
+        </template>
+      </Column>
+      <template #empty>
+        <div class="">
+          <p class="text-center text-xl">Список сервисов пуст</p>
+        </div>
+      </template>
     </DataTable>
 </template>
 
@@ -44,8 +58,12 @@ import Button from 'primevue/button';
 import {useMarketsStorage} from "@/composables/useMarketsStorage";
 import CreationModal from "@/components/settings/CreationModal.vue";
 
-const marketsStorage = useMarketsStorage()
+import { useConfirm } from "primevue/useconfirm";
+import {useToastService} from "@/composables/useToastService";
 
+const confirm = useConfirm();
+const marketsStorage = useMarketsStorage()
+const toast = useToastService()
 const markets = ref([])
 onMounted(async () => {
   markets.value = await marketsStorage.loadMarkets(true)
@@ -63,5 +81,32 @@ const maxId = computed(() => {
 const toggleActivity = async (data: any) => {
   await marketsStorage.updateMarket(data.id, data)
 }
+
 defineExpose({ getServices })
+
+const deleteService = async (service: any[]) => {
+  await marketsStorage.removeMarket(service.id)
+  toast.addSuccess(`${service.name} успешно удален`)
+  await getServices()
+}
+
+const deleteConfirmation = async (service: any[]) => {
+  confirm.require({
+    message: `Вы уверены, что хотите удалить ${service.name}? Это действие необратимо.`,
+    header: `Удаление ${service.name}`,
+    rejectProps: {
+      label: 'Отмена',
+      severity: 'secondary',
+    },
+    acceptProps: {
+      label: 'Удалить',
+      severity: 'danger',
+    },
+    accept: () => {
+      deleteService(service)
+    },
+    reject: () => {
+    }
+  });
+};
 </script>
