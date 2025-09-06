@@ -22,7 +22,7 @@
               id="id"
               size="small"
               disabled
-              v-model="id"
+              :modelValue="maxId"
               fluid
           />
           <label
@@ -164,14 +164,13 @@ const props = defineProps({
 })
 
 const visible = ref(false);
-const id = ref(props.maxId);
 const name = ref('');
 const logo = ref('');
 const searchUrl = ref('');
 const query = ref('');
 const marketResult = computed(() => {
   return {
-    id: id.value,
+    id: props.maxId,
     name: name.value,
     iconUrl: logo.value,
     searchUrl: parseLink(searchUrl.value)[0],
