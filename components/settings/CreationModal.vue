@@ -71,7 +71,7 @@
       </div>
     </div>
     <span class="text-lg mt-4">
-      Ссылка (<a href="https://github.com/maxletsplay1/Market-Multi-Search?tab=readme-ov-file#-%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0-json%D0%B0" target="_blank" class="text-blue-600 underline cursor-pointer">инструкция</a>)
+      Ссылка (<a href="https://github.com/maxletsplay1/Market-Multi-Search?tab=readme-ov-file#-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%BE%D0%B2" target="_blank" class="text-blue-600 underline cursor-pointer">инструкция</a>)
     </span>
     <div class="flex grow flex-col gap-3 mt-1">
       <FloatLabel
