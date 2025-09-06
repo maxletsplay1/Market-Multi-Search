@@ -1,13 +1,11 @@
 <template>
 <div class="flex flex-col gap-4 grow">
   <div class="flex gap-2 justify-center">
-    <ImportSettings/>
+    <ImportSettings @reload="updateTable"/>
     <ExportSettings/>
   </div>
   <div class="flex flex-col gap-2">
-    <Suspense>
-      <MarketsDataTable/>
-    </Suspense>
+    <MarketsDataTable ref="table" />
   </div>
 </div>
 </template>
@@ -16,4 +14,9 @@
 import ImportSettings from "@/components/settings/ImportSettings.vue";
 import ExportSettings from "@/components/settings/ExportSettings.vue";
 import MarketsDataTable from "@/components/settings/MarketsDataTable.vue";
+const table = ref<InstanceType<typeof MarketsDataTable> | null>(null)
+
+const updateTable = () => {
+  table.value?.getServices()
+}
 </script>

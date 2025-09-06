@@ -3,6 +3,7 @@
         label="Экспортировать настройки"
         @click="exportMarkets"
         severity="secondary"
+        size="small"
         icon="pi pi-file-export"
     />
 </template>

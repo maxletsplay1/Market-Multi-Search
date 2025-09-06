@@ -3,6 +3,7 @@
         label="Импортировать настройки"
         @click="triggerFileInput"
         icon="pi pi-file-import"
+        size="small"
     />
     <input
         ref="fileInput"
@@ -20,6 +21,7 @@ import {useMarketsStorage} from "@/composables/useMarketsStorage";
 
 const marketsStorage = useMarketsStorage()
 const fileInput = ref<HTMLInputElement | null>(null)
+const emit = defineEmits(['reload'])
 
 const triggerFileInput = () => {
   fileInput.value?.click()
@@ -33,10 +35,11 @@ const handleFileChange = async (event: Event) => {
     const text = await file.text()
     const json = JSON.parse(text)
     await marketsStorage.saveMarkets(json)
+    emit('reload')
 
     alert("JSON успешно загружен и сохранён!")
   } catch (err) {
-    alert("Ошибка: файл невалидный JSON")
+    alert(err)
   }
 }
 </script>

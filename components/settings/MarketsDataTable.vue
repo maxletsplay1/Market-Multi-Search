@@ -46,8 +46,10 @@ import CreationModal from "@/components/settings/CreationModal.vue";
 
 const marketsStorage = useMarketsStorage()
 
-const markets = ref(await marketsStorage.loadMarkets(true))
-
+const markets = ref([])
+onMounted(async () => {
+  markets.value = await marketsStorage.loadMarkets(true)
+})
 const getServices = async () => {
   const data = await marketsStorage.loadMarkets(true)
   markets.value = [...data]
@@ -61,4 +63,5 @@ const maxId = computed(() => {
 const toggleActivity = async (data: any) => {
   await marketsStorage.updateMarket(data.id, data)
 }
+defineExpose({ getServices })
 </script>
