@@ -11,9 +11,10 @@
 <script setup lang="ts">
 import Button from "primevue/button"
 import { useMarketsStorage } from "@/composables/useMarketsStorage"
+import {useToastService} from "@/composables/useToastService";
 
 const { loadMarkets } = useMarketsStorage()
-
+const toast = useToastService()
 const exportMarkets = async () => {
   try {
     const markets = await loadMarkets(true)
@@ -33,8 +34,10 @@ const exportMarkets = async () => {
     a.download = `Multi-Search-Settings-${formattedDate}.json`
     a.click()
     URL.revokeObjectURL(url)
+    toast.addSuccess('Настройки экспортированы')
   } catch (err) {
-    alert("Не удалось экспортировать JSON")
+    toast.addError('Не удалось экспортировать JSON')
+    console.error(err)
   }
 }
 </script>

@@ -150,9 +150,11 @@ import MarketCard from "@/components/mainPopup/MarketCard.vue";
 import {ref} from "vue";
 import {useMarketsStorage} from "@/composables/useMarketsStorage";
 import {parseLink} from "@/composables/linkConverter";
+import {useToastService} from "@/composables/useToastService";
 
 const emit = defineEmits(['reload'])
 const marketsStorage = useMarketsStorage()
+const toast = useToastService()
 
 const props = defineProps({
   maxId:{
@@ -188,5 +190,6 @@ const addMarket = async () => {
   await marketsStorage.addMarket(newMarket)
   visible.value = false
   emit('reload')
+  toast.addSuccess('Сервис добавлен')
 }
 </script>

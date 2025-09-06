@@ -18,7 +18,8 @@
 import { ref } from "vue"
 import Button from "primevue/button"
 import {useMarketsStorage} from "@/composables/useMarketsStorage";
-
+import {useToastService} from "@/composables/useToastService";
+const toast = useToastService();
 const marketsStorage = useMarketsStorage()
 const fileInput = ref<HTMLInputElement | null>(null)
 const emit = defineEmits(['reload'])
@@ -37,9 +38,9 @@ const handleFileChange = async (event: Event) => {
     await marketsStorage.saveMarkets(json)
     emit('reload')
 
-    alert("JSON успешно загружен и сохранён!")
+    toast.addSuccess('Настройки импортированы')
   } catch (err) {
-    alert(err)
+    toast.addError(err.message)
   }
 }
 </script>
