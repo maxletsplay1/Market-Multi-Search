@@ -22,7 +22,7 @@
     "iconUrl": "https://static.rustore.ru/imgproxy/eJ36pPU8nJ1La1nYUq4QERn3vqm5SJ20Vy72cZ8fV-g/preset:web_app_icon_62/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvNjAwNTExL2NvbnRlbnQvSUNPTi8wNGQ4MmIxZi0wOTUyLTRlOGMtYWFhNy0xZWI1OGZjN2E0NjUucG5n.webp",
     "searchUrl": "https://market.yandex.ru/search?text=${text}",
     "separator": "%20",
-    "active": true
+    "active": false
   },
   {
     "id": 4,
@@ -38,7 +38,7 @@
     "iconUrl": "https://static.rustore.ru/imgproxy/FNa6ZohdkdtuIbcOSnz0_6IvfqWjKBgVL2VVXW8Jyv8/preset:web_app_icon_62/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvMjA2MzU5OTM4Ni9jb250ZW50L0lDT04vMzBmM2QwYjQtZjkyYi00MzU3LTgzMGYtNzc0NGJjMzI5NGQxLnBuZw==.webp",
     "searchUrl": "https://cdek.shopping/?query=${text}&kea_search=true",
     "separator": "+",
-    "active": true
+    "active": false
   },
   {
     "id": 6,
@@ -46,6 +46,6 @@
     "iconUrl": "https://static.rustore.ru/imgproxy/G4djB32h9rvuqzwgBOI6gNO4j2RjFIQ33mjr0A1LUNY/preset:web_app_icon_62/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvMjA0NDk2MDYzL2NvbnRlbnQvSUNPTi8xNWZkY2M2Yi1mNDk3LTQ3Y2UtODAyZi1hMmM5ZjlhY2QxNTUucG5n.webp",
     "searchUrl": "https://au.ru/auction/?search=${text}",
     "separator": "%20",
-    "active": true
+    "active": false
   }
 ]
