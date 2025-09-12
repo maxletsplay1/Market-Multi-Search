@@ -1,9 +1,9 @@
 <template>
-  <div class="bg-gray-300 p-[1px] rounded-[9px] !max-w-7 !max-h-7">
+  <div class="bg-gray-300  p-[1px] rounded-[9px] !max-w-7 !max-h-7">
     <img
         @mousedown="open"
         :src="market.iconUrl"
-        class=" aspect-square shrink-0 rounded-lg cursor-pointer "
+        class=" aspect-square shrink-0 rounded-lg cursor-pointer hover:brightness-125"
         :alt="market.name + ' icon'"
     >
   </div>
