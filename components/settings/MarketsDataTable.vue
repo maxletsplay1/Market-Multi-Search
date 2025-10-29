@@ -57,7 +57,7 @@ import Checkbox from 'primevue/checkbox';
 import Button from 'primevue/button';
 import {useMarketsStorage} from "@/composables/useMarketsStorage";
 import CreationModal from "@/components/settings/CreationModal.vue";
-
+import {eventBus} from "@/composables/eventBus";
 import { useConfirm } from "primevue/useconfirm";
 import {useToastService} from "@/composables/useToastService";
 
@@ -81,8 +81,6 @@ const maxId = computed(() => {
 const toggleActivity = async (data: any) => {
   await marketsStorage.updateMarket(data.id, data)
 }
-
-defineExpose({ getServices })
 
 const deleteService = async (service: any[]) => {
   await marketsStorage.removeMarket(service.id)
@@ -109,4 +107,8 @@ const deleteConfirmation = async (service: any[]) => {
     }
   });
 };
+
+eventBus.on('refresh-services', () => {
+  getServices();
+});
 </script>

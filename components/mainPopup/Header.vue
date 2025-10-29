@@ -9,7 +9,7 @@
     </div>
 
     <div class="flex gap-2 justify-end">
-      <ImportSettings v-if="page === 'settings'" @reload="emit('updateSettings')" />
+      <ImportSettings v-if="page === 'settings'"/>
       <ExportSettings v-if="page === 'settings'" />
     </div>
   </div>
@@ -33,7 +33,6 @@
 import VersionChecker from './VersionChecker.vue';
 import ImportSettings from "@/components/settings/ImportSettings.vue";
 import ExportSettings from "@/components/settings/ExportSettings.vue";
-const emit = defineEmits(['updateSettings'])
 
 defineProps({
   page: {
