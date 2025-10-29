@@ -1,0 +1,24 @@
+.multisearch-market-button-wrapper {
+    background-color: #d1d5db;
+    padding: 1px;
+    border-radius: 9px;
+    max-width: 28px !important;
+    max-height: 28px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.multisearch-market-button-icon:hover {
+    filter: brightness(1.2);
+}
+.multisearch-market-button-icon {
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: all 0.2s ease;
+}

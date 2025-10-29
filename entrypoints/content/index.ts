@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import SelectionPopup from "@/pages/SelectionPopup.vue";
-import tailwindStyles from "@/assets/tailwind.css?inline";
+import buttonStyles from "@/assets/pagePopup/button.css?inline";
+import indexStyles from "@/assets/pagePopup/index.css?inline";
 
 function mountVueApp(query: string, container: HTMLElement) {
   const app = createApp(SelectionPopup, { query });
@@ -39,6 +40,9 @@ export default defineContentScript({
       popup.style.background = "#ffffff";
       popup.style.boxShadow = "0 2px 8px rgba(0,0,0,0.2)";
       popup.style.padding = "4px";
+      popup.style.display = "inline-block";
+      popup.style.maxWidth = "auto";
+      popup.style.minWidth = "0";
       popup.style.cursor = "pointer";
 
       document.body.appendChild(popup);
@@ -46,8 +50,9 @@ export default defineContentScript({
       const shadow = popup.attachShadow({ mode: "open" });
 
       const style = document.createElement("style");
-      style.textContent = tailwindStyles;
+      style.textContent = buttonStyles + "\n" + indexStyles;
       shadow.appendChild(style);
+
 
       const container = document.createElement("div");
       shadow.appendChild(container);

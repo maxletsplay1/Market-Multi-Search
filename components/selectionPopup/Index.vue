@@ -1,7 +1,7 @@
 <template>
   <div
       v-if="markets.length"
-      class="flex items-center gap-1"
+      class="multisearch-markets-container"
   >
     <MarketButton
         v-for="market in markets"
@@ -10,30 +10,30 @@
     />
     <div
         @mousedown="open"
-        class="bg-[#4ade80] hover:bg-[#86efac] h-7 w-7 rounded-lg flex items-center justify-center"
+        class="multisearch-open-button"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000000"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000000">
+        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+      </svg>
     </div>
   </div>
-  <div
-      v-else
-      class="px-2"
-  >
+
+  <div v-else class="multisearch-markets-empty">
     <p>Нет активных сервисов</p>
   </div>
 </template>
 
-<script setup lang="ts" >
+<script setup lang="ts">
 import {convertLink} from '@/composables/linkConverter'
-import MarketButton from  '@/components/selectionPopup/MarketButton.vue';
-import {useMarketsStorage} from "@/composables/useMarketsStorage";
+import MarketButton from '@/components/selectionPopup/MarketButton.vue'
+import {useMarketsStorage} from "@/composables/useMarketsStorage"
 
 const marketsStorage = useMarketsStorage()
 const markets = await marketsStorage.loadMarkets()
 
-const props = defineProps({ query: {type: String, required: true} });
+const props = defineProps({ query: { type: String, required: true } })
 
-const open = () =>{
+const open = () => {
   markets.forEach(market => {
     window.open(convertLink(market, props.query), "_blank", "noopener,noreferrer")
   })
