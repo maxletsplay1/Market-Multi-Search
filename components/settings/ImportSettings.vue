@@ -2,7 +2,7 @@
     <Button
         label="Импортировать настройки"
         @click="triggerFileInput"
-        icon="pi pi-file-import"
+        icon="pi pi-download"
         size="small"
     />
     <input

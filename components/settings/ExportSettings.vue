@@ -4,7 +4,7 @@
         @click="exportMarkets"
         severity="secondary"
         size="small"
-        icon="pi pi-file-export"
+        icon="pi pi-upload"
     />
 </template>
 
