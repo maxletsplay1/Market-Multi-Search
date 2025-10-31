@@ -38,6 +38,7 @@
           <Button
               label="Удалить"
               severity="danger"
+              size="small"
               @click="deleteConfirmation(slotProps.data)"
           />
         </template>
