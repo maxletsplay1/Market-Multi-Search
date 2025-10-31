@@ -4,7 +4,7 @@
       v-if="query !== ''"
       :href="url"
       target="_blank"
-      class="flex items-center gap-2"
+      class="flex items-center gap-2 w-full rounded-lg hover:bg-gray-600 border-gray-600 p-2 border-2"
   >
     <img
         :src="market.iconUrl"
@@ -15,7 +15,7 @@
   </a>
   <div
       v-else
-      class="flex items-center gap-2 opacity-60 cursor-not-allowed"
+      class="flex items-center gap-2 opacity-60 cursor-not-allowed p-2 border-2 w-full rounded-lg border-gray-600"
   >
     <img
         :src="market.iconUrl"
