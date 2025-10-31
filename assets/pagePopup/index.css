@@ -6,7 +6,7 @@
 }
 
 .multisearch-open-button {
-    background-color: #4ade80;
+    background-color: #98fb98;
     height: 28px;
     width: 28px;
     border-radius: 8px;
@@ -18,7 +18,10 @@
 }
 
 .multisearch-open-button:hover {
-    background-color: #86efac;
+    background-color: #c8ffc8;
+}
+.multisearch-open-button:active {
+    background-color: rgba(200,255,200,0.8);
 }
 
 .multisearch-markets-empty {

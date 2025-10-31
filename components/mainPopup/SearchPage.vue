@@ -12,6 +12,7 @@
         icon="pi pi-search"
         size="small"
         v-tooltip="'Поиск везде'"
+        class="min-w-[35px]"
     />
   </div>
   <div v-if="markets.length > 0" class="flex flex-col gap-3">
