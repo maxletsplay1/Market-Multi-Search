@@ -1,10 +1,10 @@
 <template>
     <Button
-        label="Экспортировать настройки"
-        @click="exportMarkets"
+        label="Экспорт настроек"
+        @click="exportSettings"
         severity="secondary"
         size="small"
-        icon="pi pi-file-export"
+        icon="pi pi-upload"
     />
 </template>
 
@@ -14,30 +14,41 @@ import { useMarketsStorage } from "@/composables/useMarketsStorage"
 import {useToastService} from "@/composables/useToastService";
 
 const { loadMarkets } = useMarketsStorage()
+const { loadDomains } = useDomainsStorage()
 const toast = useToastService()
-const exportMarkets = async () => {
-  try {
-    const markets = await loadMarkets(true)
-    const blob = new Blob([JSON.stringify(markets, null, 2)], {
-      type: "application/json",
-    })
 
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement("a")
-    a.href = url
-    const now = new Date()
+const exportSettings = async () => {
+  try {
+    const markets = await loadMarkets(true);
+    const domains = await loadDomains();
+
+    const newSettings = {
+      markets,
+      domains,
+    };
+
+    const blob = new Blob([JSON.stringify(newSettings, null, 2)], {
+      type: "application/json",
+    });
+
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+
+    const now = new Date();
     const formattedDate = now
         .toLocaleString("sv-SE")
         .replace(" ", "_")
-        .replace(/:/g, "-")
+        .replace(/:/g, "-");
 
-    a.download = `Multi-Search-Settings-${formattedDate}.json`
-    a.click()
-    URL.revokeObjectURL(url)
-    toast.addSuccess('Настройки экспортированы')
+    a.download = `Multi-Search-Settings-${formattedDate}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+
+    toast.addSuccess("Настройки экспортированы");
   } catch (err) {
-    toast.addError('Не удалось экспортировать JSON')
-    console.error(err)
+    toast.addError("Не удалось экспортировать JSON");
+    console.error(err);
   }
-}
+};
 </script>

@@ -8,11 +8,13 @@ export const convertLink = (market: any, query: string): string => {
 
 export const parseLink = (query: string): string[] => {
     let separator: string | null = null;
-
+    // TODO: make separators more dynamic
     if (query.includes('xyz%20xyz')) {
         separator = '%20';
     } else if (query.includes('xyz+xyz')) {
         separator = '+';
+    } else if (query.includes('xyz-xyz')) {
+        separator = '-';
     } else {
         return ['', ''];
     }

@@ -1,6 +1,8 @@
 import { createApp } from "vue";
 import SelectionPopup from "@/pages/SelectionPopup.vue";
-import tailwindStyles from "@/assets/tailwind.css?inline";
+import buttonStyles from "@/assets/pagePopup/button.css?inline";
+import indexStyles from "@/assets/pagePopup/index.css?inline";
+import {useDomainsStorage} from "@/composables/useDomainsStorage";
 
 function mountVueApp(query: string, container: HTMLElement) {
   const app = createApp(SelectionPopup, { query });
@@ -12,17 +14,24 @@ export default defineContentScript({
   main() {
     let popup: HTMLDivElement | null = null;
 
-    document.addEventListener("mouseup", () => {
+    document.addEventListener("mouseup", async () => {
       const selection = window.getSelection()?.toString().trim();
+
       if (selection) {
-        showPopup(selection);
+        await showPopup(selection);
       } else {
         removePopup();
       }
     });
 
-    function showPopup(query: string) {
+    async function showPopup(query: string) {
       removePopup();
+
+      const url = window.location.hostname
+      if (await useDomainsStorage().findDomain(url)) {
+        return;
+      }
+
 
       const range = window.getSelection()?.getRangeAt(0);
       if (!range) return;
@@ -39,15 +48,19 @@ export default defineContentScript({
       popup.style.background = "#ffffff";
       popup.style.boxShadow = "0 2px 8px rgba(0,0,0,0.2)";
       popup.style.padding = "4px";
+      popup.style.display = "inline-block";
+      popup.style.maxWidth = "auto";
+      popup.style.minWidth = "0";
       popup.style.cursor = "pointer";
 
       document.body.appendChild(popup);
 
-      const shadow = popup.attachShadow({ mode: "open" });
+      const shadow = popup.attachShadow({mode: "open"});
 
       const style = document.createElement("style");
-      style.textContent = tailwindStyles;
+      style.textContent = buttonStyles + "\n" + indexStyles;
       shadow.appendChild(style);
+
 
       const container = document.createElement("div");
       shadow.appendChild(container);

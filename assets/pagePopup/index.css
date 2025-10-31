@@ -1,0 +1,30 @@
+.multisearch-markets-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.multisearch-open-button {
+    background-color: #98fb98;
+    height: 28px;
+    width: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.multisearch-open-button:hover {
+    background-color: #c8ffc8;
+}
+.multisearch-open-button:active {
+    background-color: rgba(200,255,200,0.8);
+}
+
+.multisearch-markets-empty {
+    padding-left: 8px;
+    padding-right: 8px;
+}
